@@ -17,3 +17,5 @@ docker compose up -d
 ```shell
 docker compose stop
 ```
+
+Чтобы поменять хранилище(in-memory или PostgreSQL): откройте файл .docker.env и установите нужное значение переменной MODE

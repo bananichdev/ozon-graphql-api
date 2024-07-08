@@ -10,6 +10,6 @@ COPY app ./
 RUN go build -o ./bin/main ./cmd
 
 # wait 2 seconds for init db
-CMD sleep 2 && migrate -database ${POSTGRESQL_URL} -path internal/db/migrations up && ./bin/main
+CMD sleep 2 && go test ./internal/db && migrate -database ${POSTGRESQL_URL} -path internal/db/migrations up && ./bin/main -${MODE}
 
 EXPOSE 8000

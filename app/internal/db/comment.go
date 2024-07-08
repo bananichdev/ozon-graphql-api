@@ -16,7 +16,7 @@ func (cr *CommentRepo) GetComments(postID, first, skip int) ([]*models.Comment, 
 	pr := PostRepo{DB: cr.DB}
 	post, err := pr.GetPostByID(postID)
 	if err != nil {
-		return nil, errors.InternalError
+		return nil, err
 	}
 	if post.CommentsDisabled {
 		return nil, errors.GenerateError(fmt.Sprintf("Post with id=%d have comments disabled", postID))
@@ -52,7 +52,7 @@ func (cr *CommentRepo) CreateComment(input models.NewComment) (*models.Comment, 
 	pr := PostRepo{DB: cr.DB}
 	post, err := pr.GetPostByID(input.PostID)
 	if err != nil {
-		return nil, errors.InternalError
+		return nil, err
 	}
 	if post.CommentsDisabled {
 		return nil, errors.GenerateError(fmt.Sprintf("Post with id=%d have comments disabled", input.PostID))
