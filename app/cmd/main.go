@@ -9,9 +9,9 @@ import (
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/handler/transport"
 	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/bananichdev/ozon-graphql-api/db"
-	"github.com/bananichdev/ozon-graphql-api/graph"
-	"github.com/bananichdev/ozon-graphql-api/settings"
+	"github.com/bananichdev/ozon-graphql-api/internal/db"
+	"github.com/bananichdev/ozon-graphql-api/internal/graph"
+	"github.com/bananichdev/ozon-graphql-api/internal/settings"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

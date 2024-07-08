@@ -3,8 +3,8 @@ package db
 import (
 	"fmt"
 
-	"github.com/bananichdev/ozon-graphql-api/errors"
-	"github.com/bananichdev/ozon-graphql-api/models"
+	"github.com/bananichdev/ozon-graphql-api/internal/errors"
+	"github.com/bananichdev/ozon-graphql-api/internal/models"
 	"gorm.io/gorm"
 )
 

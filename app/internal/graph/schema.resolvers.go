@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/bananichdev/ozon-graphql-api/errors"
-	"github.com/bananichdev/ozon-graphql-api/models"
-	"github.com/bananichdev/ozon-graphql-api/settings"
+	"github.com/bananichdev/ozon-graphql-api/internal/errors"
+	"github.com/bananichdev/ozon-graphql-api/internal/models"
+	"github.com/bananichdev/ozon-graphql-api/internal/settings"
 )
 
 var commentPublishedChannel = make(map[int]chan *models.Comment)
