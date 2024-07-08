@@ -1,0 +1,39 @@
+
+schema:
+  - ./schema.graphqls
+
+exec:
+  filename: ./generated.go
+  package: graph
+
+model:
+  filename: ../models/models.go
+  package: models
+
+resolver:
+  layout: follow-schema
+  dir: .
+  package: graph
+  filename_template: "{name}.resolvers.go"
+
+autobind:
+  - "github.com/bananichdev/ozon-graphql-api/graph/models"
+
+models:
+  ID:
+    model:
+      - github.com/99designs/gqlgen/graphql.Int
+  Int:
+    model:
+      - github.com/99designs/gqlgen/graphql.Int
+  Time:
+    model:
+      - github.com/99designs/gqlgen/graphql.Time
+  Post:
+    fields:
+      comments:
+        resolver: true
+  Comment:
+    fields:
+      replies:
+        resolver: true
